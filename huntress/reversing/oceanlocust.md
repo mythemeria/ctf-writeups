@@ -28,7 +28,7 @@ Now of course there has to be some kind of difference between the two images, an
 
 ![image of running the command diff -au between img.png and encoded img.png and piping the output to a file which is then viewed with the terminal hex editor xxd](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/diff.png?raw=true)
 
-Unfortunately, this wasn’t super useful to me because I didn’t know enough about the PNG file structure to really understand what it actually meant or how to narrow down the diff to what I actually cared about. I had little understanding of how the PNG file was structured, but as it’s a common file format there should be information online about it. So I tracked down the [PNG spec](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html) and got to reading. I recommend reading that before continuing because it’ll be necessary to understand the rest of this writeup.
+Unfortunately, this wasn’t useful to me because I didn’t know enough about the PNG file structure to understand what it meant or how to narrow down the diff to what I cared about. I had little understanding of how the PNG file was structured, but as it’s a common file format there should be information online about it. So I tracked down the [PNG spec](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html) and got to reading. I recommend reading that before continuing because it’ll be necessary to understand the rest of this writeup.
 
 It turns out that PNG data is separated into chunks, so I looked for [a tool](https://www.nayuki.io/page/png-file-chunk-inspector) that would allow me to visualise PNG chunk data. This would let me find the differences I care about a lot faster.
 
