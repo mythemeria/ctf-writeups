@@ -40,7 +40,7 @@ First things first, we run the code to see what it does.
 
 ![running the program in the terminal](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/running%20gcm1.png?raw=true)
 
-To get an overview of the program, we first open it up in IDA. Looking at the function list on the left, is seems the binary is not stripped as we can still see all the function names.
+To get an overview of the program, we open it up in IDA. Looking at the function list on the left, is seems the binary is not stripped as we can still see all the function names.
 
 ![list of unstripped function names in a IDA](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/function%20names.png?raw=true)
 
