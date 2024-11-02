@@ -42,7 +42,7 @@ At this point I realised I might not need to look at any disassembly at all for 
 
 #### _Does it always output the same thing given the same input?_
 
-Already knew this from before - yes
+Already knew this from before - the chunks are rearranged but their content is the same
 
 ---
 
