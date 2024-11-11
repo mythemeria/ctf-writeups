@@ -38,28 +38,28 @@ It just makes it far easier to spot what you're looking for if you actually know
 
 First things first, we run the code to see what it does.
 
-![running the program in the terminal](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/running%20gcm1.png?raw=true)
+![running the program in the terminal](https://github.com/mythemeria/ctf-writeups/blob/main/images/running%20gcm1.png?raw=true)
 
 To get an overview of the program, we open it up in IDA. Looking at the function list on the left, is seems the binary is not stripped as we can still see all the function names.
 
-![list of unstripped function names in a IDA](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/function%20names.png?raw=true)
+![list of unstripped function names in a IDA](https://github.com/mythemeria/ctf-writeups/blob/main/images/function%20names.png?raw=true)
 
 There's some guides online that will tell you that the user code main function in a go binary is main_main, so we go straight there:
 
-![the view when we go to the main_main function](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/main_main.png?raw=true)
+![the view when we go to the main_main function](https://github.com/mythemeria/ctf-writeups/blob/main/images/main_main.png?raw=true)
 
 Now, just reading through the assembly is quite slow and tedious, so instead we look for important things. You'll notice that at the bottom there's an "Access denied!" string, so presumably this part of the code gets executed as part of how it printed that line earlier.
 
-![zoom in on ida graph where the access denied string is](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/access%20denied.png?raw=true)
+![zoom in on ida graph where the access denied string is](https://github.com/mythemeria/ctf-writeups/blob/main/images/access%20denied.png?raw=true)
 
 The program flow shows that there's some check that determines whether this path executes (.text:00000000004836CF jz short loc_483719), so what happens if we patch the binary to make the jump do the opposite? Looking up on the x86 reference, the opposite instruction to jz is jnz
 
 To patch, we go to Edit -> patch program -> assemble
 
-![patching bytes to replace jz with jnz](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/jnz%20patch.png?raw=true)
+![patching bytes to replace jz with jnz](https://github.com/mythemeria/ctf-writeups/blob/main/images/jnz%20patch.png?raw=true)
 
 The binary won't actually be changed without applying the patch, so go to Edit -> patch program -> apply patches to input file and click ok
 
 Running the program, we see this:
 
-![omg it's the flag](https://github.com/mythemeria/ctf-writeups/blob/main/huntress/images/gcm1%20flag.png?raw=true)
+![omg it's the flag](https://github.com/mythemeria/ctf-writeups/blob/main/images/gcm1%20flag.png?raw=true)
