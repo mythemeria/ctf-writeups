@@ -4,6 +4,8 @@ Put on some lofi beats, run this game, stare at the terminal, and let life start
 
 ---
 
+# THIS WRITEUP IS INCOMPLETE
+
 Though this challenge had a container, the container just provided a download for the executable 'gameoflife' and an upload to submit a "solving file" to get the flag
 
 ![that's life container]()

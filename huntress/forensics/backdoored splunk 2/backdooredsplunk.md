@@ -40,7 +40,7 @@ for tup in files:
     print(f"Error processing file {path}: {e}\n")
 ```
 
-Admittedly this could be better and I could have just skipped printing the ones that didn't match, but it did what it needed to do at this point so I didn't feel any need to continue making it nicer.
+Admittedly this could be better and I could have just skipped printing the ones that matched, but it did what it needed to do at this point so I didn't feel any need to continue making it nicer.
 
 The following files did not match:
 
